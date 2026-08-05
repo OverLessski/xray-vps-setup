@@ -179,9 +179,9 @@ xray_setup() {
     export MARZBAN_SUB_PATH=$(openssl rand -hex 8)
     mkdir -p /opt/xray-vps-setup/xray-core
     if [[ "$ARCH" == "amd64" ]]; then
-      wget -O /tmp/xray.zip https://github.com/XTLS/Xray-core/releases/download/v26.2.6/Xray-linux-64.zip
+      wget -O /tmp/xray.zip https://github.com/XTLS/Xray-core/releases/download/v26.3.27/Xray-linux-64.zip
     elif [[ "$ARCH" == "arm64" ]]; then
-      wget -O /tmp/xray.zip https://github.com/XTLS/Xray-core/releases/download/v26.2.6/Xray-linux-arm64-v8a.zip
+      wget -O /tmp/xray.zip https://github.com/XTLS/Xray-core/releases/download/v26.3.27/Xray-linux-arm64-v8a.zip
     fi
     unzip -qo /tmp/xray.zip -d /opt/xray-vps-setup/xray-core
     wget -qO- https://raw.githubusercontent.com/$GIT_REPO/refs/heads/$GIT_BRANCH/templates_for_script/compose-marzban | envsubst > ./docker-compose.yml
